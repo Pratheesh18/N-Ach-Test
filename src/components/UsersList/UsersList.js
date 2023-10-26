@@ -15,8 +15,9 @@ const UsersList = ({ users }) => {
     if(totalPages > 1){
         setShowPagination(true);
     }
-  } , [totalPages])
+  } , [users])
 
+ 
 
   const currentUsers = users.slice(
     (currentPage - 1) * usersPerPage,
@@ -41,18 +42,13 @@ const UsersList = ({ users }) => {
 
   return (
     <Container>
-      <Row>
+      <Row className="mb-4">
         {currentUsers.map((user) => (
-          <Link style={{ textDecoration: 'none'}} to={`/user/${user.id}`} key={user.id}>
-            <Col
-              style={{ margin: "10px" }}
-              md={4}
-              key={user.id}
-              className="user-card"
-            >
+          <Col style={{marginTop:"20px"}} md={4} key={user.id} className="user-card mb-4">
+            <Link style={{ textDecoration: 'none'}} to={`/user/${user.id}`}>
               <UserCard key={user.id} user={user} />
-            </Col>
-          </Link>
+            </Link>
+          </Col>
         ))}
       </Row>
       <Row className="mt-4">
