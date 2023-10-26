@@ -5,7 +5,7 @@ const UserCard = ({ user }) => {
   return (
     <div className="card">
     <Card style={{margin:"40px"}}>
-      <Card.Img variant="top" src={user.image} />
+      <Card.Img variant="top" src={user.image} alt="User Image" style={{width:"250px" , height:"250px"}} />
       <Card.Body>
         <Card.Title>{user.username}</Card.Title>
         <Card.Text>
