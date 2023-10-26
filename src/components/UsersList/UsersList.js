@@ -15,7 +15,7 @@ const UsersList = ({ users }) => {
     if(totalPages > 1){
         setShowPagination(true);
     }
-  } , [users])
+  } , [totalPages])
 
  
 
